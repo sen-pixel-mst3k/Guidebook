@@ -56,6 +56,14 @@
   .contact-actions a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
   .emergency{margin-top:20px;padding:16px 18px;border-radius:12px;background:#efe9e1}
   .emergency p+p{margin-top:6px}
+  .step-list{padding-left:24px}
+  .step-list li{padding-left:4px;margin:0 0 14px}
+  .step-list strong{display:block;font-size:16px}
+  .late-box{margin-top:20px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  .late-box h3{font-size:19px;margin-bottom:6px}
+  .apartment-info h3{font-size:20px;margin:24px 0 8px}
+  .apartment-info ul{padding-left:20px}
+  .apartment-info li{margin:6px 0}
   footer{padding:32px 0;color:var(--muted);font-size:12px;text-align:center}
   /* detail sheet */
   dialog{border:0;border-radius:18px 18px 0 0;width:100%;max-width:720px;margin:auto auto 0;max-height:88vh;padding:0;background:var(--bg);color:var(--ink)}
@@ -113,7 +121,8 @@
     <div class="cards">
       <button class="card" data-open="fly"><h3>Before You Fly</h3><span>Packing, apps &amp; eSIM</span></button>
       <button class="card" data-open="getting"><h3>Getting Here</h3><span>Metro, taxi &amp; parking</span></button>
-      <button class="card wide" data-open="checkin"><h3>Check In</h3><span>From 15:00 · Step-by-step guide</span></button>
+      <button class="card" data-open="checkin"><h3>Check In</h3><span>From 15:00 · Step-by-step guide</span></button>
+      <button class="card" data-open="checkout"><h3>Check Out</h3><span>Time &amp; leaving checklist</span></button>
     </div>
   </section>
 
@@ -130,9 +139,66 @@
   </section>
 
   <!-- ====== APARTMENT ====== -->
-  <section id="apartment">
+  <section id="apartment" class="apartment-info">
     <div class="label">The apartment</div>
     <p class="about">Our apartment is on the first floor of a restored 1880s grain warehouse, set in a quiet courtyard a few minutes from Amalienborg Palace and the Marble Church.</p>
+
+    <h3>Kitchen</h3>
+    <ul>
+      <li>The range hood remote is on the counter.</li>
+      <li>There is a Nespresso machine, with coffee and tea next to it—please help yourself.</li>
+      <li>The tap water is excellent to drink.</li>
+    </ul>
+
+    <h3>Bathroom &amp; laundry</h3>
+    <ul>
+      <li>Shampoo, conditioner, body wash and a hairdryer are provided. Towels are on the beds.</li>
+      <li>Our building dates from the 1880s, so hot water can take up to a minute to arrive. Nothing is broken.</li>
+      <li>The washer and dryer in the apartment are free to use. Detergent is in the cupboard by the bathroom sink.</li>
+      <li>When you use the dryer, please empty the water tank in the top-left corner into the toilet.</li>
+      <li>Everything we stock is eco-certified.</li>
+    </ul>
+
+    <h3>Sleeping &amp; comfort</h3>
+    <ul>
+      <li>An extra single bed measures 120 × 200 cm.</li>
+      <li>A high chair is in the wardrobe in the small bedroom.</li>
+      <li>All bedrooms have blackout curtains on the windows.</li>
+      <li>Radiators have numbered dials. A setting of 3 is about 20°C; please give it half an hour to warm up.</li>
+      <li>There is no air conditioning, but the quiet courtyard means you can leave the windows open. Portable fans are in the closets.</li>
+    </ul>
+
+    <h3>Entry &amp; deliveries</h3>
+    <p class="about">For deliveries, ask the driver to press “Billund Engsig” on the intercom at the street gate, then buzz them in from the handset by the door. There is a second intercom at the courtyard door, so you may need to buzz twice.</p>
+
+    <h3>Private areas</h3>
+    <p class="about">A few spaces are marked private (under the beds and labelled items in wardrobes), and the office stays locked. Thank you for leaving them be.</p>
+
+    <h3>TV</h3>
+    <p class="about">Streaming apps are installed, and AirPlay and Chromecast are supported. Your home Netflix or Disney+ library may differ in Denmark.</p>
+
+    <h3>Rooftop terrace</h3>
+    <p class="about">The shared rooftop terrace has a great view of the Marble Church.</p>
+    <h4>Getting there</h4>
+    <ol>
+      <li>Go down to the courtyard and enter the front building with the small key.</li>
+      <li>Walk to the top floor, pull down the roof hatch with the hanging rod, then climb the steep ladder.</li>
+    </ol>
+    <h4>Terrace rules</h4>
+    <ul>
+      <li>Close the hatch and take your rubbish with you.</li>
+      <li>A gas grill is available; turn the gas on before use and off afterwards.</li>
+      <li>The terrace is slippery when wet or icy. Please avoid it in winter and after dark.</li>
+    </ul>
+
+    <h3>House rules</h3>
+    <ul>
+      <li>Quiet hours are 22:00–07:00.</li>
+      <li>No smoking inside or in the courtyard.</li>
+      <li>Maximum 6 guests.</li>
+      <li>Please sort rubbish at the courtyard recycling station: food, glass, paper, cardboard, plastic, metal, batteries and electronics. Deposit bottles and cans can be returned at supermarkets.</li>
+      <li>Please leave outdoor shoes by the door.</li>
+    </ul>
   </section>
 
   <!-- ====== CONTACT ====== -->
@@ -191,9 +257,28 @@
 </div></dialog>
 
 <dialog id="checkin"><div class="sheet-head"><h2>Check In</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
-  <p>Check-in from 15:00 · Check-out by 11:00.</p>
-  <ol><li>[Step 1 – find the entrance]</li><li>[Step 2 – key box / code is in your check-in message]</li><li>[Step 3 – which floor / door]</li></ol>
-  <p><i>Door codes are sent privately – never on this page.</i></p>
+  <p><strong>Check-in from 15:00.</strong></p>
+  <ol class="step-list">
+    <li><strong>Find the lockbox</strong>The lockbox is at [LOCKBOX LOCATION]. Use the code from your check-in message. After dark, your phone torch helps.</li>
+    <li><strong>Collect the keys</strong>There are two keys: the small key opens all outer and shared doors, and the large key opens the apartment door.</li>
+    <li><strong>Open the gate</strong>Use the small key to open the gate.</li>
+    <li><strong>Cross the courtyard</strong>Go through the courtyard, past the entrance to the front building.</li>
+    <li><strong>Find our building</strong>We are in the courtyard building, not the street-facing one. The glass front door is on the left; open it with the small key.</li>
+    <li><strong>Up to the apartment</strong>Go up one flight of stairs to the 1st floor. There is no lift. Open the apartment door with the large key.</li>
+  </ol>
+  <p><i>We are in the courtyard building, not the street-facing one. Stuck? Call or text us.</i></p>
+  <aside class="late-box">
+    <h3>Arriving late?</h3>
+    <p>The metro runs 24/7, the 7-Eleven by the Marble Church never closes, and you can text us any time.</p>
+  </aside>
+</div></dialog>
+
+<dialog id="checkout"><div class="sheet-head"><h2>Check Out</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <p><strong>Check-out time: [CHECK-OUT TIME]</strong></p>
+  <h4>Before you leave</h4>
+  <ul><li>[CHECK-OUT TASK]</li><li>[CHECK-OUT TASK]</li></ul>
+  <h4>Keys</h4>
+  <p>[KEY RETURN INSTRUCTIONS]</p>
 </div></dialog>
 
 <dialog id="firstday"><div class="sheet-head"><h2>Your First Day</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
