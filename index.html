@@ -74,6 +74,25 @@
   .sheet-body{padding:20px}
   .sheet-body h4{margin:18px 0 6px;font-size:15px}
   .sheet-body ul,.sheet-body ol{padding-left:20px}
+  .place-category+.place-category{margin-top:24px}
+  .place-intro{margin:0 0 12px;color:var(--muted);font-size:14px}
+  .place-list{display:grid;gap:10px}
+  .place-card{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .place-card-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .place-card h5{margin:0;font:600 16px/1.35 Inter,system-ui,sans-serif}
+  .place-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:99px;background:#efe9e1;color:#62584f;font-size:11px;line-height:1.5;white-space:nowrap}
+  .place-badge.pick{background:#f3e4dc;color:#8f3d20}
+  .place-meta{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:7px;color:var(--muted);font-size:13px}
+  .place-description{margin-top:9px;color:#4a443e;font-size:14px;line-height:1.55}
+  .place-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .place-tag{padding:3px 8px;border-radius:99px;background:#f1ece6;color:#62584f;font-size:11px;line-height:1.4}
+  .place-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:13px}
+  .place-links a{color:var(--accent);text-decoration:none}
+  .place-links a:hover{text-decoration:underline}
+  .place-subitems{display:grid;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .place-subitem h6{font-size:14px;font-weight:600}
+  .place-note{margin-top:12px;padding:12px;border-radius:10px;background:#f1ece6;color:#4a443e;font-size:13px}
+  .essentials-link{display:inline-block;margin-top:24px;font-weight:600;text-decoration:none}
   .sheet-body li{margin:4px 0}
   /* bottom nav */
   nav.bottom{position:fixed;bottom:0;left:0;right:0;z-index:6;background:rgba(247,244,239,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom))}
@@ -282,100 +301,469 @@
 </div></dialog>
 
 <dialog id="eat"><div class="sheet-head"><h2>Explore the Neighbourhood</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
-  <p class="label">Local recommendations</p>
+  <section class="place-category">
+    <h4>MUST SEE &amp; DO</h4>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>The Marble Church</h5><span class="place-badge pick">Our pick</span></div>
+        <div class="place-meta"><span>1 min walk</span></div>
+        <p class="place-description">The Marble Church is in our opinion the most beautiful church in Denmark. We married and baptised our daughter there. Book the tower tour (very limited hours) for a spectacular view of Copenhagen. If you just want to enjoy the dome from the outside — go up to our rooftop terrace with some drinks on a warm evening and watch the sun go down.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Marble+Church+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Tivoli Gardens</h5></div>
+        <div class="place-meta"><span>10 minutes by metro</span></div>
+        <p class="place-description">An amazing amusement park like nothing else — the second-oldest still running, and locals keep coming back every season. You can easily spend your day eating at the great restaurants, going on the rides or just enjoying the atmosphere — a city in itself. In October it dresses up for Halloween, and from mid-November to early January it becomes the best Christmas market in the city — worth the entry on its own, and still open the week after the outdoor markets have packed up. Closed for a week or so in early November, and from early January to late March.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tivoli+Gardens+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Copenhagen Zoo</h5></div>
+        <div class="place-meta"><span>About 20 minutes by metro and foot</span></div>
+        <p class="place-description">We love taking our daughter to Copenhagen Zoo. Stock up on snacks, drinks, and lunch before going in (it&apos;s allowed!) and enjoy the beautiful enclosures, most of them designed by world-famous architects. The Giant Panda enclosure is something special — and you can book lunch or dinner at its restaurant, with only a thin pane of glass between you and the pandas.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Copenhagen+Zoo+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Canal Boat Tours</h5><span class="place-badge">Summer</span></div>
+        <p class="place-description">Seeing Copenhagen from the harbour is one of the most memorable things you can do. The canals wind past Christiania, Islands Brygge, the Opera House, Nyhavn, and the Black Diamond — and the perspective from the water is completely different from walking.</p>
+        <div class="place-subitems">
+          <div class="place-subitem">
+            <h6>GoBoat</h6>
+            <div class="place-meta"><span>Price: Around DKK 499/hour.</span></div>
+            <p class="place-description">You captain your own small electric boat (no licence needed, max 8 people). Pack drinks and snacks, pick a route, and explore at your own pace. The most fun option for groups and couples.</p>
+            <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=GoBoat+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+          </div>
+          <div class="place-subitem">
+            <h6>HeyCaptain</h6>
+            <p class="place-description">A guided tour where a local skipper takes you around. More relaxed, and you&apos;ll learn about the city while cruising. Good range of different tours available.</p>
+            <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=HeyCaptain+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+          </div>
+        </div>
+        <p class="place-note">Both depart from locations within 10–15 minutes of the apartment. GoBoat&apos;s Nyhavn departure point is closest. Book ahead in summer — they sell out quickly.</p>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Harbour Swimming — Islands Brygge</h5><span class="place-badge">Summer</span></div>
+        <div class="place-meta"><span>15 minutes by bike or metro (change at Kongens Nytorv to the M1)</span><span>Free</span></div>
+        <p class="place-description">In summer, harbour swimming is one of the most Copenhagen things you can do. The water is clean, the facilities are free, and locals treat the harbour pools like their living room. The harbour bath at Islands Brygge (Havnebadet) is Copenhagen&apos;s most popular harbour bath, with diving platforms and a chilled-out atmosphere right on the water. Bring a towel to sit on, pack some food and drinks (alcohol is allowed in public spaces in Denmark — grab a few beers or a bottle of wine from Netto), and spend an afternoon. It gets busy on warm days, but that&apos;s part of the charm.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Harbour+Swimming+Islands+Brygge+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Winter Bathing — SaunaNor</h5><span class="place-badge">Winter</span></div>
+        <div class="place-meta"><span>Two stops on the metro going to Nordhavn</span></div>
+        <p class="place-description">This is serious stuff in Denmark. All winter, a lot of the population voluntarily strips down to bathing suits and jumps into the harbour, even if there is ice. A fantastic experience that we enjoy (and do frequently). SaunaNor offers guest passes. It is a 50-minute sauna experience where after 10 minutes in the sauna (between 80–100°C / 175–212°F for our American guests), you will have a chance to cool yourself down in the harbour. Bring a towel, bathing suit, a bottle of water and bravery!</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=SaunaNor+Nordhavn+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Dyrehaven (The Deer Park)</h5></div>
+        <div class="place-meta"><span>About 25 minutes (walk to Østerport, S-train to Klampenborg)</span></div>
+        <p class="place-description">For an easy day-trip out of the city, walk to Østerport Station, take the S-train, and suddenly you&apos;re in a beautiful 17th-century deer park once reserved for the Kings of Denmark. You&apos;ll get close to the deer (still the only ones in Denmark the King has exclusive hunting rights to), see the Eremitage hunting lodge where royal hunting feasts were held, and stop for your own feast at one of the great restaurants in and around the park — we recommend Peter Lieps Hus. In winter it is better still — the deer stand out against the frost, Bakken is mostly shut, and you can walk for an hour without meeting anyone. Go early; the light is gone by four.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Dyrehaven+The+Deer+Park+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Changing of the Royal Guard</h5></div>
+        <div class="place-meta"><span>2 min walk</span><span>Free</span></div>
+        <p class="place-description">Every day at noon, the Life Guards march from their barracks near Rosenborg Castle to Amalienborg Palace for the changing of the guard — a ceremony that has been performed since the 17th century. It&apos;s a small but quietly moving reminder that Denmark is still a Kingdom, and that some traditions here go back hundreds of years. The guards march down Bredgade and sometimes through Store Kongensgade itself — the street the apartment is on — so you may hear them before you even know to look.</p>
+        <p class="place-note">Tip: The guard departs their barracks at Gothersgade (near Rosenborg) at around 11:30 and arrives at Amalienborg at noon. Arrive on the palace square by 11:45 for a good spot. Or simply stand on Bredgade — or even outside the apartment on Store Kongensgade, as the procession sometimes comes right past the front door. Fewer crowds, more atmosphere. The ceremony varies: when the King is in residence, a full military band accompanies; other times it&apos;s drums and fifes only, or silence.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Changing+of+the+Royal+Guard+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Christmas Markets</h5><span class="place-badge">Winter</span></div>
+        <div class="place-meta"><span>6 November to 21 December</span><span>20 min walk</span></div>
+        <p class="place-description">Copenhagen does Christmas properly. The outdoor markets run from early November until just before Christmas Eve. Start at Nytorv &amp; Gammeltorv, the two old squares off Strøget — wooden stalls, gløgg and æbleskiver. Tivoli&apos;s is ultimately the best of them, but go on a weekday: at the weekend the whole of Danish family Copenhagen is there.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Christmas+Markets+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Julefrokost — the Danish Christmas Lunch</h5><span class="place-badge">Winter</span></div>
+        <div class="place-meta"><span>late November through December</span></div>
+        <p class="place-description">The julefrokost is an institution and nothing like a quiet lunch. It runs all through December: herring to start, then the warm dishes, then cheese, with beer and aquavit throughout, and it lasts for hours. If you want one, book as far ahead as you can. The good places are full by late November and weekends are essentially impossible by then — a weekday sitting is your realistic chance. Palægade, Møntergade, Aamanns 1921 and Restaurant Amalie all do it properly.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Julefrokost+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Copenhagen Light Festival</h5><span class="place-badge">Winter</span></div>
+        <div class="place-meta"><span>late January to about 21 February</span></div>
+        <p class="place-description">February is the hardest month here — dark by four, cold, and a long way past Christmas. The Light Festival exists precisely for that. Light installations appear along the harbour and the canals for about three weeks, all free and all outdoors, and they are best walked after dinner when it is properly dark. Start at the Black Diamond and follow the water. The dates move a little each year, so check before you set out.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Copenhagen+Light+Festival+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Christiansborg Tower</h5></div>
+        <div class="place-meta"><span>20 min walk</span><span>Free</span></div>
+        <p class="place-description">The best view in Copenhagen, and it costs nothing. A lift takes you most of the way up the tower at Christiansborg, and from the top the whole city finally makes sense — the harbour, the spires, the copper roofs. It is better in winter than in summer: go around four o&apos;clock, when the light is going and the city starts lighting up beneath you. Bring a hat, it is exposed up there.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Christiansborg+Tower+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Den Blå Planet — the Aquarium</h5></div>
+        <div class="place-meta"><span>About 25 minutes by metro</span></div>
+        <p class="place-description">When the weather is against you, this is where we go. Northern Europe&apos;s largest aquarium sits out by the airport, 25 minutes on the metro, and it will absorb half a day without anyone noticing. The big ocean tank with the hammerheads is the one everyone remembers. Go in the morning — it fills up with Danish families after lunch, especially on a wet weekend.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Den+Bl%C3%A5+Planet+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Must see &amp; do</h4>
-  <ul>
-    <li><b>The Marble Church</b> <small>Our pick</small> — A 1-minute walk away. Book a tower tour for the view, or enjoy the dome from our rooftop at sunset.</li>
-    <li>Changing of the Royal Guard at Amalienborg — 2 minutes away.</li>
-    <li>Tivoli Gardens</li>
-    <li>Copenhagen Zoo</li>
-    <li>Christiansborg Tower — free views.</li>
-    <li>Den Blå Planet aquarium</li>
-    <li>Dyrehaven deer park</li>
-    <li>Winter bathing at SaunaNor (winter)</li>
-    <li>Christmas markets (winter)</li>
-    <li>Julefrokost, the Danish Christmas lunch (winter)</li>
-    <li>Copenhagen Light Festival (winter)</li>
-  </ul>
+  <section class="place-category">
+    <h4>COFFEE &amp; BAKERIES</h4>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Buka Bakery</h5><span class="place-badge pick">Our pick</span></div>
+        <div class="place-meta"><span>Esplanaden 14</span><span>5 min walk</span><span>$$$</span></div>
+        <p class="place-description">Modern bakery with sourdough and great coffee. Still relatively quiet. You can sit down and eat. We recommend their buns (especially salt and pepper) with butter and cheese (the so-called BMO) — great and very affordable in comparison.</p>
+        <div class="place-tags"><span class="place-tag">bakery</span><span class="place-tag">sourdough</span><span class="place-tag">coffee</span><span class="place-tag">sit-down</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Buka+Bakery+Esplanaden+14+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/buka_bakery/" target="_blank" rel="noopener noreferrer">@buka_bakery</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Hart Bageri</h5></div>
+        <div class="place-meta"><span>2 min walk</span><span>$$$</span></div>
+        <p class="place-description">Exceptional sourdough and pastries. Very popular and pricey, but worth it.</p>
+        <div class="place-tags"><span class="place-tag">pastry</span><span class="place-tag">sourdough</span><span class="place-tag">coffee</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hart+Bageri+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/hartbageri/" target="_blank" rel="noopener noreferrer">@hartbageri</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bagt</h5></div>
+        <div class="place-meta"><span>3 min walk</span><span>$</span></div>
+        <p class="place-description">More affordable than the other places. Good for a quick coffee on your way back and forth from the city centre. Has some very good sandwiches as well for a quick bite.</p>
+        <div class="place-tags"><span class="place-tag">coffee</span><span class="place-tag">sandwich</span><span class="place-tag">quick</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bagt+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bagt_boulangerie/" target="_blank" rel="noopener noreferrer">@bagt_boulangerie</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Herkules Pavillonen</h5><span class="place-badge">Summer</span></div>
+        <div class="place-meta"><span>9 min walk</span><span>$</span></div>
+        <p class="place-description">Right in the middle of The King&apos;s Garden — there is a great, a bit hidden, place with freshly baked buns and good coffee. It is especially great with kids that can run around without any traffic while you are enjoying the peace of the Garden. One of our favourite places!</p>
+        <div class="place-tags"><span class="place-tag">coffee</span><span class="place-tag">bakery</span><span class="place-tag">park</span><span class="place-tag">kid-friendly</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Herkules+Pavillonen+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/herkulespavillonen/" target="_blank" rel="noopener noreferrer">@herkulespavillonen</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Format</h5></div>
+        <div class="place-meta"><span>4 min walk</span><span>$$</span></div>
+        <p class="place-description">Our answer to a dark afternoon. Format is the café inside Designmuseum Danmark, so you drink your coffee surrounded by Danish design, the baked goods are genuinely good, and it is somehow never busy. You can take a table and stay an hour without anyone minding. Four minutes from our door.</p>
+        <div class="place-tags"><span class="place-tag">hygge</span><span class="place-tag">design</span><span class="place-tag">quiet</span><span class="place-tag">rainy day</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Format+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Coffee &amp; bakeries</h4>
-  <ul>
-    <li><b>Buka Bakery</b> <small>Our pick</small> — Esplanaden 14.</li>
-    <li>Hart Bageri</li>
-    <li>Bagt</li>
-    <li>Format</li>
-  </ul>
+  <section class="place-category">
+    <h4>BREAKFAST &amp; BRUNCH</h4>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Kismet</h5><span class="place-badge pick">Our pick</span></div>
+        <div class="place-meta"><span>Adelgade 16</span><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">Our favourite breakfast and brunch place. Very affordable in comparison to other more hyped places. There is good room to sit and their breakfast is wonderful. More local vibe than touristy vibe.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">brunch</span><span class="place-tag">local</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kismet+Adelgade+16+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/kismetcph/" target="_blank" rel="noopener noreferrer">@kismetcph</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Atelier September</h5></div>
+        <div class="place-meta"><span>5 min walk</span><span>$$$</span></div>
+        <p class="place-description">The iconic minimalist café that started Copenhagen&apos;s aesthetic breakfast revolution. Creative, artistic dishes in a space that feels like a gallery. Weekend queues are real, but the wait is part of the experience.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">aesthetic</span><span class="place-tag">instagram</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Atelier+September+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/atelierseptember/" target="_blank" rel="noopener noreferrer">@atelierseptember</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Apotek 57</h5></div>
+        <div class="place-meta"><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">Frama&apos;s serene design café with beautiful natural light and calm Scandinavian aesthetics. Simple menu executed perfectly. Weekends get busy, but the vibe stays peaceful. We prefer it to Atelier when we want a slower morning.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">design</span><span class="place-tag">calm</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Apotek+57+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/apotek57/" target="_blank" rel="noopener noreferrer">@apotek57</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bottega Barlie</h5></div>
+        <div class="place-meta"><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">This Italian-inspired spot does it all — breakfast, natural wine, dinner. Book a table if you can (breakfast normally not required). The courtyard gets sun in the morning, perfect for a good start. A favourite with local creatives.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">italian</span><span class="place-tag">wine</span><span class="place-tag">dinner</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bottega+Barlie+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bottegabarlie/" target="_blank" rel="noopener noreferrer">@bottegabarlie</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bottega Barlito</h5></div>
+        <div class="place-meta"><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">The sister spot to Bottega Barlie, right on Esplanaden. Same quality, great for a casual breakfast or lunch.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">italian</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bottega+Barlito+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bottegabarlito/" target="_blank" rel="noopener noreferrer">@bottegabarlito</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Studio X Kitchen</h5></div>
+        <div class="place-meta"><span>8 min walk</span><span>$$</span></div>
+        <p class="place-description">Modern café with seasonal menus that change with what&apos;s available. Great for breakfast and lunch. Gets crowded, so try Petra Bar &amp; Restaurant directly across the street if full — equally good, same quality.</p>
+        <div class="place-tags"><span class="place-tag">breakfast</span><span class="place-tag">lunch</span><span class="place-tag">seasonal</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Studio+X+Kitchen+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/studioxkitchen/" target="_blank" rel="noopener noreferrer">@studioxkitchen</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Breakfast &amp; brunch</h4>
-  <ul>
-    <li><b>Kismet</b> <small>Our pick</small></li>
-    <li>Atelier September</li>
-    <li>Apotek 57</li>
-    <li>Bottega Barlie</li>
-    <li>Bottega Barlito</li>
-    <li>Studio X Kitchen</li>
-  </ul>
+  <section class="place-category">
+    <h4>SMØRREBRØD</h4>
+    <p class="place-intro">Traditional Danish open-faced sandwiches — a must-try Copenhagen experience.</p>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Restaurant Palægade</h5><span class="place-badge pick">Our pick</span></div>
+        <div class="place-meta"><span>Palægade 8</span><span>5 min walk</span><span>$$$</span></div>
+        <p class="place-description">The best in our opinion. Authentic traditional smørrebrød executed with precision. This is how Danes have been eating open-faced sandwiches for generations — no modern twists, just exceptional ingredients and technique. A proper Copenhagen experience. Quite pricey — but well worth it. Book a table in advance. Our favourites are the chicken salad on rye bread and eggs and prawns on toast.</p>
+        <div class="place-tags"><span class="place-tag">smørrebrød</span><span class="place-tag">traditional</span><span class="place-tag">book ahead</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant+Pal%C3%A6gade+Pal%C3%A6gade+8+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/rest_palaegade/" target="_blank" rel="noopener noreferrer">@rest_palaegade</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Møntergade</h5></div>
+        <div class="place-meta"><span>12 min walk</span><span>$$$</span></div>
+        <p class="place-description">Another top choice for classic smørrebrød. Consistently excellent. If there is not room at Palægade — this is a sure second choice. As expensive as Palægade (around DKK 180 for one piece of rye bread — and you will want between 2–3).</p>
+        <div class="place-tags"><span class="place-tag">smørrebrød</span><span class="place-tag">traditional</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=M%C3%B8ntergade+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/montergade/" target="_blank" rel="noopener noreferrer">@montergade</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Restaurant Amalie</h5></div>
+        <div class="place-meta"><span>8 min walk</span><span>$$</span></div>
+        <p class="place-description">A more affordable choice. It will showcase the traditional craft of smørrebrød — and the setting is very traditional. A solid choice if you want to try it without breaking the bank!</p>
+        <div class="place-tags"><span class="place-tag">smørrebrød</span><span class="place-tag">traditional</span><span class="place-tag">affordable</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant+Amalie+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/restaurant_amalie/" target="_blank" rel="noopener noreferrer">@restaurant_amalie</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Aamanns 1921</h5></div>
+        <div class="place-meta"><span>17 min walk</span><span>$$$</span></div>
+        <p class="place-description">Aamanns has done more than anyone to bring smørrebrød into the present without losing the point of it. Everything is made properly, the rye is their own, and the aquavit list deserves your attention. Small, and it fills — book ahead, and well ahead in December.</p>
+        <div class="place-tags"><span class="place-tag">smørrebrød</span><span class="place-tag">aquavit</span><span class="place-tag">book ahead</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Aamanns+1921+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Selma</h5></div>
+        <div class="place-meta"><span>20 min walk</span><span>$$</span></div>
+        <p class="place-description">Where to go if you want smørrebrød that is not trying to be traditional. The combinations are their own and they work — it is the most interesting version of this food in the city. Famous for lunch, and now open for a dinner tasting menu later in the week too — worth booking.</p>
+        <div class="place-tags"><span class="place-tag">smørrebrød</span><span class="place-tag">modern</span><span class="place-tag">lunch</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Selma+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Smørrebrød</h4>
-  <ul>
-    <li><b>Restaurant Palægade</b> <small>Our pick</small> — At Palægade 8, serving traditional smørrebrød with a precise touch. It is pricey but worth it; book ahead and try the chicken salad on rye or egg and prawns.</li>
-    <li>Møntergade</li>
-    <li>Restaurant Amalie</li>
-    <li>Aamanns 1921</li>
-    <li>Selma</li>
-  </ul>
+  <section class="place-category">
+    <h4>DINNER</h4>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Locale 21</h5><span class="place-badge pick">Our pick</span></div>
+        <div class="place-meta"><span>Ny Østergade 21</span><span>10 min walk</span><span>$$$</span></div>
+        <p class="place-description">A modern Italian that&apos;s become our go-to. Fresh pasta, inventive dishes, cosy atmosphere that feels both sophisticated and welcoming. Better than most places we&apos;ve eaten in Italy — and that&apos;s not an exaggeration. Book ahead. Also great for lunch where a booking is not normally required.</p>
+        <div class="place-tags"><span class="place-tag">italian</span><span class="place-tag">pasta</span><span class="place-tag">book ahead</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Locale+21+Ny+%C3%98stergade+21+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/locale.21/" target="_blank" rel="noopener noreferrer">@locale.21</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bottega Barlie</h5></div>
+        <div class="place-meta"><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">Also listed in our breakfast section. This place does double duty beautifully — Italian breakfast and wine by day, full dinner service by night. The natural wine list is excellent, and the outdoor courtyard is magical in good weather.</p>
+        <div class="place-tags"><span class="place-tag">italian</span><span class="place-tag">wine</span><span class="place-tag">outdoor</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bottega+Barlie+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bottegabarlie/" target="_blank" rel="noopener noreferrer">@bottegabarlie</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bistro Boheme</h5></div>
+        <div class="place-meta"><span>3 min walk</span><span>$$$</span></div>
+        <p class="place-description">Old-school French bistro with romantic candlelit ambiance and classic dishes done right. An institution in this neighbourhood for good reason. You&apos;ll pay for the experience, but some nights call for that. Legendary chef that basically started the French bistro culture in Denmark.</p>
+        <div class="place-tags"><span class="place-tag">french</span><span class="place-tag">romantic</span><span class="place-tag">classic</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bistro+Boheme+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bistrobohemecph/" target="_blank" rel="noopener noreferrer">@bistrobohemecph</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Goldfinch</h5></div>
+        <div class="place-meta"><span>10 min walk</span><span>$$$</span></div>
+        <p class="place-description">Nostalgic Cantonese in an elegant setting with shared plates and an exciting wine list. This is where you go for a fun, lively night out with friends. Excellent start if you are going to a nightclub afterwards. The food is both comforting and adventurous.</p>
+        <div class="place-tags"><span class="place-tag">cantonese</span><span class="place-tag">wine</span><span class="place-tag">nightout</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Goldfinch+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/goldfinch_cph/" target="_blank" rel="noopener noreferrer">@goldfinch_cph</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Mielcke &amp; Hurtigkarl</h5></div>
+        <div class="place-meta"><span>15 minutes by metro and foot</span><span>$$$</span></div>
+        <p class="place-description">This is not in the neighbourhood — but well worth the detour. It is the best place we have ever eaten, anywhere — and the setting in the Frederiksberg Gardens is impossibly romantic. It is completely magical with the best service, wine list and food. Quality and price go hand-in-hand. Quite expensive, but well worth it.</p>
+        <div class="place-tags"><span class="place-tag">fine-dining</span><span class="place-tag">romantic</span><span class="place-tag">garden</span><span class="place-tag">special occasion</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mielcke+%26+Hurtigkarl+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/mielckehurtigkarl/" target="_blank" rel="noopener noreferrer">@mielckehurtigkarl</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Pastis</h5></div>
+        <div class="place-meta"><span>10 min walk</span><span>$$</span></div>
+        <p class="place-description">Relaxed French-inspired bistro that&apos;s wildly popular with locals for good reason. Classic dishes, unpretentious vibe. The lunch menu offers excellent value. You can&apos;t go wrong here.</p>
+        <div class="place-tags"><span class="place-tag">french</span><span class="place-tag">bistro</span><span class="place-tag">value</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Pastis+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/restaurantpastis/" target="_blank" rel="noopener noreferrer">@restaurantpastis</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Maison</h5></div>
+        <div class="place-meta"><span>6 min walk</span><span>$$$</span></div>
+        <p class="place-description">A proper French restaurant a few minutes from our door, and the closest Copenhagen gets to putting you in Paris for an evening. It is not cheap. But the service is impeccable, the kitchen does not have off nights, and the pepper steak is a real classic — order it. Book ahead, especially in winter when everyone wants to be somewhere warm and candlelit.</p>
+        <div class="place-tags"><span class="place-tag">french</span><span class="place-tag">special occasion</span><span class="place-tag">book ahead</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Maison+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Dinner</h4>
-  <ul>
-    <li><b>Locale 21</b> <small>Our pick</small> — At Ny Østergade 21, serving modern Italian food and fresh pasta.</li>
-    <li>Bottega Barlie</li>
-    <li>Bistro Boheme</li>
-    <li>Goldfinch</li>
-    <li>Mielcke &amp; Hurtigkarl</li>
-    <li>Pastis</li>
-    <li>Maison</li>
-  </ul>
+  <section class="place-category">
+    <h4>TAKEAWAY</h4>
+    <p class="place-intro">Local favourites for nights in. Wolt is Denmark&apos;s food delivery app (like Uber Eats or Deliveroo) — download it before you arrive.</p>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>District Tonkin</h5></div>
+        <div class="place-meta"><span>Store Kongensgade 71</span><span>2 min walk</span><span>$</span></div>
+        <p class="place-description">Fantastic Vietnamese with Banh Mi that is our everyday go-to. Fresh spring rolls, pho, light dishes perfect for lunch or easy dinner. Great value, consistently good.</p>
+        <div class="place-tags"><span class="place-tag">vietnamese</span><span class="place-tag">banh-mi</span><span class="place-tag">pho</span><span class="place-tag">quick</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=District+Tonkin+Store+Kongensgade+71+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/districttonkin/" target="_blank" rel="noopener noreferrer">@districttonkin</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Fabro Pasta</h5></div>
+        <div class="place-meta"><span>2 min walk</span><span>$</span></div>
+        <p class="place-description">Small Italian spot making fresh pasta daily with just a few perfectly executed sauces. Extremely trendy, very affordable. Also has a tiny restaurant with antipasti. Weekday visits are wise — weekend queues are very intense.</p>
+        <div class="place-tags"><span class="place-tag">italian</span><span class="place-tag">pasta</span><span class="place-tag">trendy</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fabro+Pasta+Borgergade+134+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/fabropasta/" target="_blank" rel="noopener noreferrer">@fabropasta</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Another Pizza</h5></div>
+        <div class="place-meta"><span>2 min walk</span><span>$$</span></div>
+        <p class="place-description">Classic pizzeria with quick service and quality pies. More expensive than typical takeaway but better than the alternatives nearby. Right next door to Fabro.</p>
+        <div class="place-tags"><span class="place-tag">pizza</span><span class="place-tag">quick</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Another+Pizza+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/anotherpizza.dk/" target="_blank" rel="noopener noreferrer">@anotherpizza.dk</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Takeaway</h4>
-  <ul>
-    <li><b>District Tonkin</b> <small>Our pick</small></li>
-    <li>Fabro Pasta — Borgergade 134.</li>
-    <li>Another Pizza</li>
-  </ul>
+  <section class="place-category">
+    <h4>BARS &amp; NIGHTLIFE</h4>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Bird</h5></div>
+        <div class="place-meta"><span>Palægade 8</span><span>5 min walk</span><span>$$</span></div>
+        <p class="place-description">A super cool cocktail bar that looks like a Japanese coffee house mixed with a Berlin record store. The cocktails are good and surprisingly affordable — two Negronis for DKK 200. The staff is genuinely hospitable. Don&apos;t be discouraged by any queue; just let them know you&apos;re there and you&apos;ll be seated quickly. A perfect spot for a drink before or after dinner.</p>
+        <div class="place-tags"><span class="place-tag">cocktails</span><span class="place-tag">vinyl</span><span class="place-tag">intimate</span><span class="place-tag">neighbourhood</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bird+Pal%C3%A6gade+8+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/bird.cph/" target="_blank" rel="noopener noreferrer">@bird.cph</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Apéro</h5></div>
+        <div class="place-meta"><span>12 min walk</span><span>$$$</span></div>
+        <p class="place-description">Sophisticated wine bar with excellent cocktails and a curated selection. Perfect for pre-dinner drinks or a full evening.</p>
+        <div class="place-tags"><span class="place-tag">wine-bar</span><span class="place-tag">cocktails</span><span class="place-tag">sophisticated</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ap%C3%A9ro+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/apero_cph/" target="_blank" rel="noopener noreferrer">@apero_cph</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Fiasco Bar</h5></div>
+        <div class="place-meta"><span>2 min walk</span><span>$$</span></div>
+        <p class="place-description">Sister to Fabro Pasta, this is where Copenhagen&apos;s stylish set comes for wine, cocktails, and small bites. More bar than restaurant, with an effortlessly cool atmosphere. Expect to see the city&apos;s most fashionable people here.</p>
+        <div class="place-tags"><span class="place-tag">wine</span><span class="place-tag">cocktails</span><span class="place-tag">trendy</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fiasco+Bar+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/fiasco.bar/" target="_blank" rel="noopener noreferrer">@fiasco.bar</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Borgerkroen</h5></div>
+        <div class="place-meta"><span>3 min walk</span><span>$</span></div>
+        <p class="place-description">Traditional Danish bodega — the real deal. Not fancy, not trendy, just authentic Copenhagen drinking culture. Good beer, locals at the bar, honest prices. A different side of the city.</p>
+        <div class="place-tags"><span class="place-tag">bodega</span><span class="place-tag">local</span><span class="place-tag">authentic</span><span class="place-tag">beer</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Borgerkroen+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/borgerkroen/" target="_blank" rel="noopener noreferrer">@borgerkroen</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Blackswan</h5></div>
+        <div class="place-meta"><span>3 min walk</span><span>$$</span></div>
+        <p class="place-description">Serious craft beer bar with an impressive rotating selection. The staff knows their stuff and can guide you to something special.</p>
+        <div class="place-tags"><span class="place-tag">craft-beer</span><span class="place-tag">rotating-selection</span></div>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Blackswan+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a><a href="https://www.instagram.com/blackswanbar/" target="_blank" rel="noopener noreferrer">@blackswanbar</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Bars &amp; nightlife</h4>
-  <ul>
-    <li><b>Bird</b> <small>Our pick</small></li>
-    <li>Apéro</li>
-    <li>Fiasco Bar</li>
-    <li>Borgerkroen</li>
-    <li>Blackswan</li>
-  </ul>
+  <section class="place-category">
+    <h4>COPENHAGEN WITH CHILDREN</h4>
+    <p class="place-intro">Travelling with kids? Copenhagen is a fantastic city for families.</p>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Gammelvagt Playground</h5></div>
+        <div class="place-meta"><span>Gammelvagt, Nyboder</span><span>5 min walk</span></div>
+        <p class="place-description">Our local playground, and the one our daughter knows best. A swing, a slide and a sandpit, small, quiet and very local, so it&apos;s the right size for the littlest ones. Grab a coffee at Bagt on the way and take it with you. She loves all three playgrounds near the flat, so you can work through them one at a time.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Gammelvagt+Playground+Gammelvagt+Nyboder+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Kongens Have (The King&apos;s Garden)</h5></div>
+        <div class="place-meta"><span>Behind Rosenborg Castle</span><span>7 min walk</span></div>
+        <p class="place-description">The playground sits right in the middle of the park behind Rosenborg Castle. A lovely spot and free, but it&apos;s for slightly bigger children, about 4 and up: there&apos;s no slide and no swing. Bare and quiet in winter, and the playground stays open, so it&apos;s worth a detour on a bright cold day.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kongens+Have+Rosenborg+Castle+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Østre Anlæg Playground</h5></div>
+        <div class="place-meta"><span>Østre Anlæg park, behind the National Gallery (SMK)</span><span>14 min walk</span></div>
+        <p class="place-description">Up for a bit of a walk? This is the big one: trampolines, really big slides and swings, mostly for older children, in one of the loveliest parks in the city. Krebs&apos; Skole, one of Denmark&apos;s best-known private schools, uses it as its playground. Little ones love it too, and there&apos;s a toilet at the playground.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=%C3%98stre+Anl%C3%A6g+Playground+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Tivoli Gardens</h5></div>
+        <div class="place-meta"><span>10 minutes by metro</span></div>
+        <p class="place-description">Magical for children of all ages. Rides range from gentle carousels to proper roller coasters, and the gardens themselves are beautiful. Kids under 3 go free. Closed from early January to late March.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tivoli+Gardens+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Experimentarium</h5></div>
+        <div class="place-meta"><span>Hellerup</span><span>15 minutes north by S-train (Østerport → Hellerup)</span></div>
+        <p class="place-description">Denmark&apos;s leading science centre, completely rebuilt and interactive. Kids can touch, build, and explore everything. Plan at least 2–3 hours.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Experimentarium+Hellerup+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Copenhagen Zoo</h5></div>
+        <div class="place-meta"><span>Roskildevej 32, Frederiksberg</span><span>About 20 minutes by metro and foot</span></div>
+        <p class="place-description">Beautiful enclosures by world-famous architects, with the Giant Panda enclosure as the highlight. Pack snacks, drinks, and lunch before going in (it&apos;s allowed!) — and let the kids run.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Copenhagen+Zoo+Roskildevej+32+Frederiksberg+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Little House</h5></div>
+        <div class="place-meta"><span>Østerbro — Viborggade 70B</span><span>10 minutes by bus or cycle from the apartment</span><span>Day pass: DKK 50 per child on weekdays, DKK 75 at weekends (adults free)</span><span>Open Mon–Fri 9–18, Sat 9–13, Sun 9–12</span></div>
+        <p class="place-description">When the weather turns and you need somewhere warm for the little ones, Little House is a lifesaver. A clean, well-designed indoor playground for kids up to 6 — swings, play castle, slides.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Little+House+Viborggade+70B+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Broens Skøjtebane</h5><span class="place-badge">Winter</span></div>
+        <div class="place-meta"><span>late October to late February</span><span>Christianshavn, by the harbour</span><span>16 min walk</span></div>
+        <p class="place-description">Outdoor ice rink on the water at Christianshavn. About DKK 20 an hour with your own skates, or hire skates on site, including small bob skates for little ones. Under-6s need an adult with them on the ice. The street-food halls are right beside it, so you can thaw out with something hot the moment small hands get cold.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Broens+Sk%C3%B8jtebane+Christianshavn+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Den Blå Planet</h5></div>
+        <div class="place-meta"><span>Kastrup, by the airport</span><span>About 25 minutes by metro</span></div>
+        <p class="place-description">Northern Europe&apos;s largest aquarium and the best bad-weather plan in the city. Half a day disappears easily. Go in the morning on a wet weekend — it fills up.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Den+Bl%C3%A5+Planet+Kastrup+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Copenhagen with children</h4>
-  <ul>
-    <li><b>Kongens Have / King&apos;s Garden</b> <small>Our pick</small></li>
-    <li>Gammelvagt playground</li>
-    <li>Østre Anlæg playground</li>
-    <li>Tivoli Gardens</li>
-    <li>Experimentarium</li>
-    <li>Copenhagen Zoo</li>
-    <li>Little House</li>
-    <li>Broens Skøjtebane ice rink (winter)</li>
-    <li>Den Blå Planet</li>
-  </ul>
+  <section class="place-category">
+    <h4>ESSENTIALS</h4>
+    <p class="place-intro">Milk, painkillers and cash — nearest first.</p>
+    <div class="place-list">
+      <article class="place-card">
+        <div class="place-card-head"><h5>Alma</h5><span class="place-badge">Grocery</span></div>
+        <div class="place-meta"><span>Store Kongensgade 100</span><span>1 min walk</span></div>
+        <p class="place-description">Premium organic products, pricier but excellent.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Alma+Store+Kongensgade+100+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>7-Eleven</h5><span class="place-badge">Open 24/7</span></div>
+        <div class="place-meta"><span>Store Kongensgade 84</span><span>1 min walk</span></div>
+        <p class="place-description">Household basics, painkillers, quick food and drinks — at a slight premium. By the Marble Church.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=7-Eleven+Store+Kongensgade+84+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>SuperBrugsen</h5><span class="place-badge">Grocery</span></div>
+        <div class="place-meta"><span>Borgergade 28</span><span>3 min walk</span></div>
+        <p class="place-description">Large supermarket with bakery.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=SuperBrugsen+Borgergade+28+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>365discount</h5><span class="place-badge">Grocery</span></div>
+        <div class="place-meta"><span>Borgergade 24</span><span>4 min walk</span></div>
+        <p class="place-description">Basics and organic.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=365discount+Borgergade+24+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Netto</h5><span class="place-badge">Grocery</span></div>
+        <div class="place-meta"><span>Store Kongensgade 49</span><span>5 min walk</span></div>
+        <p class="place-description">Best value for essentials. Good hours including Sundays. Our favourite local shopping.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Netto+Store+Kongensgade+49+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Kongelig Hof Apotek</h5><span class="place-badge">Pharmacy</span></div>
+        <div class="place-meta"><span>Store Kongensgade 45</span><span>5 min walk</span></div>
+        <p class="place-description">Toward Kongens Nytorv.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Kongelig+Hof+Apotek+Store+Kongensgade+45+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+      <article class="place-card">
+        <div class="place-card-head"><h5>Sydbank</h5><span class="place-badge">Fee-free ATM</span></div>
+        <div class="place-meta"><span>Kongens Nytorv</span><span>9 min walk</span></div>
+        <p class="place-description">Skip the other ATMs nearby — they charge significant withdrawal fees.</p>
+        <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sydbank+ATM+Kongens+Nytorv+Copenhagen" target="_blank" rel="noopener noreferrer">Directions</a></div>
+      </article>
+    </div>
+  </section>
 
-  <h4>Essentials</h4>
-  <ul>
-    <li><b>Netto</b> <small>Our pick</small> — Store Kongensgade 49; best value and open Sundays.</li>
-    <li>SuperBrugsen — Borgergade 28; large, with a bakery.</li>
-    <li>Alma — Store Kongensgade 100; organic and pricier.</li>
-    <li>365discount — Borgergade 24.</li>
-    <li>7-Eleven by the Marble Church — open 24/7, with basics including painkillers.</li>
-    <li>Kongelig Hof Apotek — Store Kongensgade 45.</li>
-    <li>Sydbank ATM at Kongens Nytorv; nearby ATMs charge high fees.</li>
-  </ul>
+  <a class="essentials-link" href="#essentials" data-open="essentials">Wi-Fi, transport &amp; safety →</a>
 </div></dialog>
 
 <dialog id="essentials"><div class="sheet-head"><h2>Essentials</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
