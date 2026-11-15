@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Copenhagen Guide</title>
+<meta name="description" content="A personal guide to our neighbourhood for guests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ====== EDIT COLOURS HERE ====== */
+  :root{
+    --bg:#f7f4ef; --card:#ffffff; --ink:#2b2724; --muted:#7a716a;
+    --line:#e7e1d8; --dark:#2f2b27; --accent:#b4532a;
+    --hero-img:url('https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1600&q=70');
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;padding-bottom:80px}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+  a{color:var(--accent)}
+  .topbar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);text-align:center;padding:12px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+  .hero{min-height:52vh;display:flex;align-items:flex-end;padding:32px 20px;color:#fff;
+    background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.55)),var(--hero-img) center/cover,#8a8178}
+  .hero h1{font-size:clamp(34px,7vw,56px);line-height:1.1;max-width:14ch}
+  .hero p{margin-top:8px;opacity:.9}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+  /* weather */
+  .weather{background:var(--dark);color:#f1ece6;padding:16px 0}
+  .weather .row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .toggle{display:flex;background:#4a443e;border-radius:99px;padding:3px}
+  .toggle button{border:0;background:none;color:#cfc7bf;border-radius:99px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
+  .toggle button.on{background:#fff;color:var(--ink)}
+  .days{display:flex;gap:4px;justify-content:space-between;margin-top:12px;overflow-x:auto;font-size:12px;text-align:center}
+  .days div{min-width:40px}
+  .days .ic{font-size:18px;display:block;margin:2px 0}
+  /* sections */
+  section{padding:40px 0 8px}
+  .hosts{text-align:center}
+  .avatar{width:84px;height:84px;border-radius:50%;background:var(--line) center/cover;margin:0 auto 12px}
+  .hosts h2{font-size:24px}
+  .hosts small{color:var(--muted)}
+  .hosts p{margin-top:12px;color:#4a443e}
+  .label{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .cards{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:transform .15s}
+  .card:hover{transform:translateY(-2px)}
+  .card.wide{grid-column:1/-1}
+  .card h3{font-size:19px}
+  .card span{color:var(--muted);font-size:14px}
+  .wifi{margin-top:24px;padding:14px 18px;border-radius:12px;background:#efe9e1;font-size:14px}
+  .about{color:#4a443e}
+  footer{padding:32px 0;color:var(--muted);font-size:12px;text-align:center}
+  /* detail sheet */
+  dialog{border:0;border-radius:18px 18px 0 0;width:100%;max-width:720px;margin:auto auto 0;max-height:88vh;padding:0;background:var(--bg);color:var(--ink)}
+  dialog::backdrop{background:rgba(0,0,0,.45)}
+  .sheet-head{position:sticky;top:0;background:var(--bg);display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .sheet-head h2{font-size:22px}
+  .close{border:0;background:var(--line);width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer}
+  .sheet-body{padding:20px}
+  .sheet-body h4{margin:18px 0 6px;font-size:15px}
+  .sheet-body ul,.sheet-body ol{padding-left:20px}
+  .sheet-body li{margin:4px 0}
+  /* bottom nav */
+  nav.bottom{position:fixed;bottom:0;left:0;right:0;z-index:6;background:rgba(247,244,239,.96);backdrop-filter:blur(6px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom))}
+  nav.bottom a{text-decoration:none;color:var(--ink);font-size:11px;text-align:center}
+  nav.bottom a i{display:block;font-style:normal;font-size:18px}
+  @media (max-width:480px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">CPH Guide</div>
+
+<!-- ====== HERO: edit title + subtitle ====== -->
+<header class="hero" id="home">
+  <div class="wrap" style="width:100%">
+    <h1>Our Copenhagen Guide</h1>
+    <p>A personal guide to our neighbourhood</p>
+  </div>
+</header>
+
+<!-- ====== WEATHER (live, from Open-Meteo, no key needed) ====== -->
+<div class="weather">
+  <div class="wrap">
+    <div class="row">
+      <div id="wnow">Loading weather…</div>
+      <div class="toggle"><button data-u="c" class="on">°C</button><button data-u="f">°F</button></div>
+    </div>
+    <div class="days" id="wdays"></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ====== HOSTS ====== -->
+  <section class="hosts">
+    <div class="avatar" style="background-image:url('')"></div>
+    <h2>[Your names]</h2>
+    <small>Your hosts</small>
+    <p>[A few warm sentences about you: who lives here, since when you've hosted, what you love about the area.]</p>
+  </section>
+
+  <!-- ====== BEFORE YOU ARRIVE ====== -->
+  <section id="arrive">
+    <div class="label">Before you arrive</div>
+    <div class="cards">
+      <button class="card" data-open="fly"><h3>Before You Fly</h3><span>Packing, apps &amp; eSIM</span></button>
+      <button class="card" data-open="getting"><h3>Getting Here</h3><span>Metro, taxi &amp; parking</span></button>
+      <button class="card wide" data-open="checkin"><h3>Check In</h3><span>From 15:00 · Step-by-step guide</span></button>
+    </div>
+  </section>
+
+  <!-- ====== DURING YOUR STAY ====== -->
+  <section id="picks">
+    <div class="label">During your stay</div>
+    <div class="cards">
+      <button class="card wide" data-open="firstday"><h3>Your First Day</h3><span>A suggested itinerary to get started</span></button>
+      <button class="card" data-open="eat"><h3>Explore the Neighbourhood</h3><span>Restaurants, cafés &amp; bars</span></button>
+      <button class="card" data-open="essentials"><h3>Essentials</h3><span>Grocery, transport, pharmacy &amp; safety</span></button>
+      <button class="card wide" data-open="run"><h3>Running &amp; Walking Routes</h3><span>Scenic routes from the doorstep</span></button>
+    </div>
+    <div class="wifi">WiFi: <b>[Network name]</b> · Password in your check-in message</div>
+  </section>
+
+  <!-- ====== APARTMENT ====== -->
+  <section id="apartment">
+    <div class="label">The apartment</div>
+    <p class="about">[Describe the apartment: size, building, light, what makes it special. Keep the exact address out of the public page.]</p>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact">
+    <div class="label">Contact</div>
+    <p class="about">Message us through the booking app any time. In an emergency call <b>112</b>. Non-urgent medical help: <b>1813</b>.</p>
+  </section>
+
+  <footer>Made with care for our guests.</footer>
+</main>
+
+<!-- ====== DETAIL SHEETS: one <dialog> per card. Edit the text freely. ====== -->
+<dialog id="fly"><div class="sheet-head"><h2>Before You Fly</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>Packing</h4><ul><li>Layers and a rain jacket, whatever the season.</li><li>EU plug (type C/F/K), 230V.</li></ul>
+  <h4>Useful apps</h4><ul><li><b>DOT Mobilbilletter</b> – metro, bus &amp; train tickets.</li><li><b>Google Maps</b> – works well for public transport.</li><li><b>MobilePay</b> is common, but cards are accepted almost everywhere.</li></ul>
+  <h4>eSIM</h4><p>[Your recommendation]</p>
+</div></dialog>
+
+<dialog id="getting"><div class="sheet-head"><h2>Getting Here</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>From the airport by metro</h4><p>[Line, stop and walking time to you.]</p>
+  <h4>Taxi</h4><p>[Approx. price and time.]</p>
+  <h4>Parking</h4><p>[Where to park and how to pay.]</p>
+</div></dialog>
+
+<dialog id="checkin"><div class="sheet-head"><h2>Check In</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <p>Check-in from 15:00 · Check-out by 11:00.</p>
+  <ol><li>[Step 1 – find the entrance]</li><li>[Step 2 – key box / code is in your check-in message]</li><li>[Step 3 – which floor / door]</li></ol>
+  <p><i>Door codes are sent privately – never on this page.</i></p>
+</div></dialog>
+
+<dialog id="firstday"><div class="sheet-head"><h2>Your First Day</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>Morning</h4><p>[Bakery + coffee nearby]</p>
+  <h4>Midday</h4><p>[A walk or sight]</p>
+  <h4>Evening</h4><p>[Dinner suggestion]</p>
+</div></dialog>
+
+<dialog id="eat"><div class="sheet-head"><h2>Explore the Neighbourhood</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>Restaurants</h4><ul><li><b>[Name]</b> – [one line why you love it]</li></ul>
+  <h4>Cafés &amp; bakeries</h4><ul><li><b>[Name]</b> – [one line]</li></ul>
+  <h4>Bars</h4><ul><li><b>[Name]</b> – [one line]</li></ul>
+</div></dialog>
+
+<dialog id="essentials"><div class="sheet-head"><h2>Essentials</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>Grocery</h4><p>[Nearest supermarket + hours]</p>
+  <h4>Pharmacy</h4><p>[Nearest apotek]</p>
+  <h4>Transport</h4><p>[Nearest metro / bus / city bikes]</p>
+  <h4>Safety</h4><p>Emergency: 112 · Medical helpline: 1813</p>
+</div></dialog>
+
+<dialog id="run"><div class="sheet-head"><h2>Running &amp; Walking Routes</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <h4>Route 1 – [name], [x] km</h4><p>[Description, optionally a Google Maps link]</p>
+  <h4>Route 2 – [name], [x] km</h4><p>[Description]</p>
+</div></dialog>
+
+<nav class="bottom">
+  <a href="#home"><i>⌂</i>Home</a>
+  <a href="#arrive"><i>⚿</i>Arrive</a>
+  <a href="#picks"><i>✦</i>Picks</a>
+  <a href="#apartment"><i>▣</i>Apartment</a>
+  <a href="#contact"><i>✆</i>Contact</a>
+</nav>
+
+<script>
+  // ====== Detail sheets ======
+  document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.open).showModal());
+  document.querySelectorAll('dialog').forEach(d=>{
+    d.querySelector('.close').onclick=()=>d.close();
+    d.addEventListener('click',e=>{if(e.target===d)d.close()});
+  });
+
+  // ====== Weather: set your location here ======
+  const LAT=55.6761, LON=12.5683;
+  const W={0:['☀️','Clear'],1:['🌤️','Mostly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],45:['🌫️','Fog'],48:['🌫️','Fog'],
+    51:['🌦️','Drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Drizzle'],61:['🌧️','Rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],
+    71:['🌨️','Snow'],73:['🌨️','Snow'],75:['❄️','Heavy snow'],80:['🌦️','Showers'],81:['🌧️','Showers'],82:['⛈️','Heavy showers'],95:['⛈️','Thunder']};
+  const w=c=>W[c]||['☁️','Cloudy'];
+  let data=null, unit='c';
+  const t=v=>Math.round(unit==='c'?v:v*9/5+32)+'°';
+  function render(){
+    if(!data) return;
+    const d=data.daily;
+    document.getElementById('wnow').textContent=`${w(d.weather_code[0])[0]} ${w(d.weather_code[0])[1]} today, ${t(d.temperature_2m_max[0])} / ${t(d.temperature_2m_min[0])}`;
+    document.getElementById('wdays').innerHTML=d.time.slice(1).map((day,i)=>{
+      const c=d.weather_code[i+1];
+      return `<div>${new Date(day).toLocaleDateString('en',{weekday:'short'})}<span class="ic" title="${w(c)[1]}">${w(c)[0]}</span>${t(d.temperature_2m_max[i+1])}</div>`}).join('');
+  }
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=8`)
+    .then(r=>r.json()).then(j=>{data=j;render()}).catch(()=>document.getElementById('wnow').textContent='Weather unavailable');
+  document.querySelectorAll('.toggle button').forEach(b=>b.onclick=()=>{
+    unit=b.dataset.u;document.querySelectorAll('.toggle button').forEach(x=>x.classList.toggle('on',x===b));render()});
+</script>
+</body>
+</html>
