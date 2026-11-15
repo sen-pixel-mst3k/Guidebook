@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lise and Sune's Copenhagen Guide</title>
+<title>Lise &amp; Sune's Copenhagen Guide</title>
 <meta name="description" content="A personal guide to our neighbourhood for guests.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +51,11 @@
   .card span{color:var(--muted);font-size:14px}
   .wifi{margin-top:24px;padding:14px 18px;border-radius:12px;background:#efe9e1;font-size:14px}
   .about{color:#4a443e}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+  .contact-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:999px;background:var(--dark);color:#fff;text-decoration:none;font-size:14px;font-weight:600}
+  .contact-actions a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .emergency{margin-top:20px;padding:16px 18px;border-radius:12px;background:#efe9e1}
+  .emergency p+p{margin-top:6px}
   footer{padding:32px 0;color:var(--muted);font-size:12px;text-align:center}
   /* detail sheet */
   dialog{border:0;border-radius:18px 18px 0 0;width:100%;max-width:720px;margin:auto auto 0;max-height:88vh;padding:0;background:var(--bg);color:var(--ink)}
@@ -76,7 +81,7 @@
 <!-- ====== HERO: edit title + subtitle ====== -->
 <header class="hero" id="home">
   <div class="wrap" style="width:100%">
-    <h1>Lise and Sune's Copenhagen Guide</h1>
+    <h1>Lise &amp; Sune's Copenhagen Guide</h1>
     <p>A personal guide to our neighbourhood</p>
   </div>
 </header>
@@ -96,10 +101,10 @@
 
   <!-- ====== HOSTS ====== -->
   <section class="hosts">
-    <div class="avatar" style="background-image:url('')"></div>
-    <h2>[Your names]</h2>
+    <div class="avatar" aria-hidden="true"></div>
+    <h2>Lise &amp; Sune</h2>
     <small>Your hosts</small>
-    <p>[A few warm sentences about you: who lives here, since when you've hosted, what you love about the area.]</p>
+    <p>We are Sune and Lise, and we live here with our two daughters, Nanna and Tilde. Our eldest, Katinka, has flown the nest. Sharing our home is a new experience for us, but we are looking forward to welcoming guests from across the world - and to sharing the wonderful city of Copenhagen, where you have chosen a spot smack in the middle. Welcome, and we hope you enjoy your stay.</p>
   </section>
 
   <!-- ====== BEFORE YOU ARRIVE ====== -->
@@ -121,19 +126,34 @@
       <button class="card" data-open="essentials"><h3>Essentials</h3><span>Grocery, transport, pharmacy &amp; safety</span></button>
       <button class="card wide" data-open="run"><h3>Running &amp; Walking Routes</h3><span>Scenic routes from the doorstep</span></button>
     </div>
-    <div class="wifi">WiFi: <b>[Network name]</b> · Password in your check-in message</div>
+    <div class="wifi">Wi-Fi: <b>SL_GUEST_WIFI</b> · <b>SL_GUEST_WIFI_5G</b> · Password in your check-in message</div>
   </section>
 
   <!-- ====== APARTMENT ====== -->
   <section id="apartment">
     <div class="label">The apartment</div>
-    <p class="about">[Describe the apartment: size, building, light, what makes it special. Keep the exact address out of the public page.]</p>
+    <p class="about">Our apartment is on the first floor of a restored 1880s grain warehouse, set in a quiet courtyard a few minutes from Amalienborg Palace and the Marble Church.</p>
   </section>
 
   <!-- ====== CONTACT ====== -->
   <section id="contact">
     <div class="label">Contact</div>
-    <p class="about">Message us through the booking app any time. In an emergency call <b>112</b>. Non-urgent medical help: <b>1813</b>.</p>
+    <h2>Locked out or something broken?</h2>
+    <p class="about">Call or text us and we will help as quickly as we can.</p>
+    <div class="contact-actions" aria-label="Contact Lise and Sune">
+      <a href="tel:+4531504355">Call Sune · +45 31 50 43 55</a>
+      <a href="tel:+4553519552">Call Lise · +45 53 51 95 52</a>
+      <a href="https://wa.me/4531504355" target="_blank" rel="noopener noreferrer">WhatsApp Sune</a>
+    </div>
+    <div class="emergency">
+      <p><strong>Emergency</strong> 112</p>
+      <p><strong>Non-urgent medical help</strong> 1813</p>
+    </div>
+    <section class="hosts" aria-label="About your hosts">
+      <h2>Lise &amp; Sune</h2>
+      <small>Your hosts</small>
+      <p>We are Sune and Lise, and we live here with our two daughters, Nanna and Tilde. Our eldest, Katinka, has flown the nest. Sharing our home is a new experience for us, but we are looking forward to welcoming guests from across the world - and to sharing the wonderful city of Copenhagen, where you have chosen a spot smack in the middle. Welcome, and we hope you enjoy your stay.</p>
+    </section>
   </section>
 
   <footer>Made with care for our guests.</footer>
@@ -165,6 +185,7 @@
 </div></dialog>
 
 <dialog id="eat"><div class="sheet-head"><h2>Explore the Neighbourhood</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
+  <p class="label">Hand-picked by Lise &amp; Sune</p>
   <h4>Restaurants</h4><ul><li><b>[Name]</b> – [one line why you love it]</li></ul>
   <h4>Cafés &amp; bakeries</h4><ul><li><b>[Name]</b> – [one line]</li></ul>
   <h4>Bars</h4><ul><li><b>[Name]</b> – [one line]</li></ul>
@@ -175,6 +196,7 @@
   <h4>Pharmacy</h4><p>[Nearest apotek]</p>
   <h4>Transport</h4><p>[Nearest metro / bus / city bikes]</p>
   <h4>Safety</h4><p>Emergency: 112 · Medical helpline: 1813</p>
+  <div class="wifi">Wi-Fi: <b>SL_GUEST_WIFI</b> · <b>SL_GUEST_WIFI_5G</b> · Password in your check-in message</div>
 </div></dialog>
 
 <dialog id="run"><div class="sheet-head"><h2>Running &amp; Walking Routes</h2><button class="close" aria-label="Close">×</button></div><div class="sheet-body">
